@@ -1,0 +1,42 @@
+﻿
+@using CleanArchitecture.Application.ViewModel
+@model PersonalViewModel
+@{
+    ViewBag.Title = "AddPersonal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("AddPersonal", "Personel", FormMethod.Post))
+{
+    <br />
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                @Html.Label("Kişi Adı")
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                <br />
+                @Html.Label("Kişi Soyadı")
+                @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+                <br />
+                @Html.Label("Kişi Doğum Tarihi")
+                @Html.TextBoxFor(x => x.BirthDay, new { @class = "form-control" })
+                <br />
+                @Html.Label("Kişi Maili")
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                <br />
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label>Telefon Numarası Seçiniz</label>
+                @Html.DropDownListFor(x => x.SelectedPhones, new MultiSelectList(ViewBag.PhoneNumbers, "Id", "PhoneNumber"), new { multiple = "multiple" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-primary">Ekle ve Kaydet</button>
+        </div>
+    </div>
+}

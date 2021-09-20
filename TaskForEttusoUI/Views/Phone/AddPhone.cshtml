@@ -1,0 +1,16 @@
+﻿@using CleanArchitecture.Application.ViewModel
+@model PhoneViewModel
+@{ ViewData["Title"] = "AddPhone"; }
+
+<h1>Telefon Ekle</h1>
+
+@using (Html.BeginForm("AddPhone", "Phone", FormMethod.Post))
+{
+<div class="row">
+    <div class="col-6">
+        <div class="form-group">
+            @Html.TextBoxFor(x => x.PhoneNumber)
+            <button class="btn btn-primary">Ekle</button>
+        </div>
+    </div>
+</div>}

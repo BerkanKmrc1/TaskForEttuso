@@ -1,0 +1,19 @@
+﻿@model PersonalViewModel
+<form method="post">
+    @Html.Label(" ID")
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+    <br />
+    @Html.Label("Name")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.Label("Surname")
+    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+    <br />
+    @Html.Label("Email")
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    @Html.Label("BirthDay")
+    @Html.TextAreaFor(x => x.BirthDay, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Kişiyi Güncelle</button>
+</form>

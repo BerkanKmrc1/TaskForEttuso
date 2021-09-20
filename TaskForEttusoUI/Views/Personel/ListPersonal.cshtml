@@ -1,0 +1,36 @@
+﻿
+@model IEnumerable<PersonalDetailViewModel>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<h3>Kişi Listesi</h3>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>Kişi Adı</th>
+        <th>Kişi Soyadı</th>
+        <th>Kişi Doğum Tarihi</th>
+        <th>Kişi Maili</th>
+        <th>Kişi Telefon Numarası</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    @*<td>@item.PersonalId</td>*@
+    <td>@item.Name</td>
+    <td>@item.Surname</td>
+    <td>@item.BirthDay</td>
+    <td>@item.Email</td>
+    <td>@item.PhoneNumber</td>
+    <td><a class="btn btn-success" href="/Personal/UpdatePersonal/@item.Id">Güncelle</a></td>
+    <td><a class="btn btn-danger" href="/Personel/DeletePersonal/@item.Id">Sil</a></td>
+
+</tr>
+
+    }
+
+
+
+
+</table>
+<br />
+<a href="/Personel/AddPersonal" class="btn btn-info">Yeni Kişi</a>
